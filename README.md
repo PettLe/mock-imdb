@@ -1,3 +1,16 @@
+This is the final project of The Odin Project's fullstack curriculum's JavaScript section. I will be creating my own mock version of Internet Movie Database (IMDb).
+It will utilize most of the techs and techniques previously learned, such as React, Firebase, API calls (OMDb API probably), React Router, async functions etc. Also I try to use new things such as Reactfire, and things I know and have practiced but not used nearly enough, like Jest for testing.
+
+This WILL take a long time. There WILL be frustrations. But like with previous projects, all those WILL be overcome. (As a note to future me.)
+My goal is at this point for the web app to have at least most of these functions:
+
+- Listing of newest and most popular movies
+- Ratings
+- Info (director, plot, actors, etc.)
+- Possibility to use Google Auth to sign in and create own reviews and lists
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
