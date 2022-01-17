@@ -11,6 +11,11 @@ My goal is at this point for the web app to have at least most of these function
 
 ---
 
+Notes: The API I'm using seems to allow only fetching one specific movie at a time. So not flexible enough. Have to explore other possibilities, if there's not a
+workaround.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
