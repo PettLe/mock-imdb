@@ -5,7 +5,7 @@ import MainPage from "./mainPage";
 function App() {
   const [imgUrl, setImgUrl] = useState("");
   const [movie, setMovie] = useState("");
-  const [movieInfo, setMovieInfo] = useState();
+  const [movieInfo, setMovieInfo] = useState([]);
 
   useEffect(() => {
     const getDatabase = async () => {
@@ -23,13 +23,13 @@ function App() {
         "http://www.omdbapi.com/?apikey=f2822ef&i=tt4154796"
       );
       let movies2 = await data2.json().then((movies) => {
+        console.log(movies);
         setMovieInfo(movies);
       });
-
-      console.log(movieInfo);
     };
     getDatabase();
   }, []);
+  console.log(movieInfo);
 
   return (
     <div className="App">
