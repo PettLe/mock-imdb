@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import MainPage from "./mainPage";
+import { signIn } from "./firebase.js";
 
 function App() {
   const [imgUrl, setImgUrl] = useState("");
@@ -34,6 +35,7 @@ function App() {
   return (
     <div className="App">
       <h1>Pette Movie Database</h1>
+      <button onClick={signIn}>Sign In!</button>
       <MainPage movieInfo={movieInfo} movie={movie} imgUrl={imgUrl} />
     </div>
   );
