@@ -14,7 +14,7 @@ My goal is at this point for the web app to have at least most of these function
 Notes: The API I'm using seems to allow only fetching one specific movie at a time. So not flexible enough. Have to explore other possibilities, if there's not a
 workaround. => It might still be possible.
 
-New problem is that app won't render because results come in too slow. But I think I should for now forget the rendering and focus on functions instead.
+The rendering seems to work now. It was fixed with simple extra tag (not tied to API calls), so that the page never tried to render completely empty page.
 
 ---
 
