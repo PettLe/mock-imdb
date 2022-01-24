@@ -16,6 +16,10 @@ h1 {
   text-align: center;
 }
 
+h1 a {
+  text-decoration: none;
+}
+
 .synopsis {
   max-width: 25vw;
   margin: 0 auto;

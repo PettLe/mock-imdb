@@ -3,6 +3,11 @@ import { useState, useEffect } from "react";
 import MainPage from "./mainPage";
 import { signIn } from "./firebase.js";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+
 function App() {
   const [imgUrl, setImgUrl] = useState("");
   const [movie, setMovie] = useState("");
@@ -34,8 +39,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Pette Movie Database</h1>
-      <button onClick={signIn}>Sign In!</button>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <h1>Pette Movie Database</h1>
+          </Navbar.Brand>
+          <Nav className="ms-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Movies</Nav.Link>
+            <Nav.Link href="#pricing" onClick={signIn}>
+              Sign-In
+            </Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
       <MainPage movieInfo={movieInfo} movie={movie} imgUrl={imgUrl} />
     </div>
   );
