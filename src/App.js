@@ -46,8 +46,8 @@ function App() {
           </Navbar.Brand>
           <Nav className="ms-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Movies</Nav.Link>
-            <Nav.Link href="#pricing" onClick={signIn}>
+            <Nav.Link href="#movies">Movies</Nav.Link>
+            <Nav.Link href="#signin" onClick={signIn}>
               Sign-In
             </Nav.Link>
           </Nav>
