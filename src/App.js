@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import MainPage from "./mainPage";
-import { signIn } from "./firebase.js";
+import { signIn, userName, googleSignIn, userSignOut } from "./firebase.js";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "react-bootstrap/Navbar";
@@ -37,6 +37,11 @@ function App() {
   }, []);
   console.log(movieInfo);
 
+  const login = function () {
+    signIn();
+    console.log(userName);
+  };
+
   return (
     <div className="App">
       <Navbar bg="dark" variant="dark">
@@ -47,14 +52,27 @@ function App() {
           <Nav className="ms-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#movies">Movies</Nav.Link>
-            <Nav.Link href="#signin" onClick={signIn}>
+            <Nav.Link
+              href="#signin"
+              onClick={() => {
+                login();
+              }}
+            >
               Sign-In
+            </Nav.Link>
+            <Nav.Link href="#signout" onClick={userSignOut}>
+              Sign-Out
             </Nav.Link>
           </Nav>
         </Container>
       </Navbar>
 
-      <MainPage movieInfo={movieInfo} movie={movie} imgUrl={imgUrl} />
+      <MainPage
+        movieInfo={movieInfo}
+        user={userName}
+        movie={movie}
+        imgUrl={imgUrl}
+      />
     </div>
   );
 }

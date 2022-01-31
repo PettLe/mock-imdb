@@ -4,7 +4,12 @@ import { initializeApp } from "firebase/app";
 
 import { getAnalytics } from "firebase/analytics";
 
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
 
@@ -39,6 +44,17 @@ const provider = new GoogleAuthProvider();
 const analytics = getAnalytics(app);
 
 const auth = getAuth();
+
+function googleSignIn() {
+  const provider = new GoogleAuthProvider();
+  // select account
+  provider.setCustomParameters({
+    prompt: "select_account",
+  });
+  return signInWithPopup(auth, provider);
+}
+
+let userName = "";
 const signIn = () => {
   signInWithPopup(auth, provider)
     .then((result) => {
@@ -47,7 +63,7 @@ const signIn = () => {
       const token = credential.accessToken;
       // The signed-in user info.
       const user = result.user;
-      // ...
+      userName = user.displayName;
     })
     .catch((error) => {
       // Handle Errors here.
@@ -61,4 +77,15 @@ const signIn = () => {
     });
 };
 
-export { signIn };
+const userSignOut = function () {
+  signOut(auth)
+    .then(() => {
+      userName = "Stranger";
+      console.log("Nyt pitäis olla ulkona");
+    })
+    .catch((error) => {
+      console.log("Uloskirjautuminen ei toimi");
+    });
+};
+
+export { signIn, userName, googleSignIn, userSignOut };

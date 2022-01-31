@@ -1,12 +1,13 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { userName } from "./firebase.js";
 
 function MainPage(props) {
-  const { movieInfo, movie, imgUrl } = props;
+  const { movieInfo, movie, imgUrl, user } = props;
 
   return (
     <div className="App">
-      <h2>Shaibaa</h2>
+      <h2>Hello, {userName}</h2>
       <h2>{movie}</h2>
       <img src={imgUrl} alt="Scream Poster" />
       <div className="movie">
