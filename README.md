@@ -18,6 +18,10 @@ The rendering seems to work now. It was fixed with simple extra tag (not tied to
 
 ---
 
+Further notes: I deviated from this project for now. Updates on the The Odin Project Curriculum added and moved new content, some of which is supposed to come before this final project. As I was already pretty much stuck with this one, I very much welcomed this break. I also think that I need to ditch this project for time being, and eventually start it from the scratch. I really like the idea of this web app. But, for the TOP final JS project, I may need to undertake a different kind of web app. Something little less ambitious.
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
